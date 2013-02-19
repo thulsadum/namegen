@@ -48,7 +48,7 @@ NUM=10
 
 SPLIT=0
 
-pushd $(basedir $0) > /dev/null
+pushd $(dirname $0) > /dev/null
 
 [ -n "$1" ] && NUM="$1"
 [ -n "$2" ] && GENDER="$2"
