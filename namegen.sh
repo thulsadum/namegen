@@ -48,6 +48,8 @@ NUM=10
 
 SPLIT=0
 
+pushd $(basedir $0) > /dev/null
+
 [ -n "$1" ] && NUM="$1"
 [ -n "$2" ] && GENDER="$2"
 
@@ -69,3 +71,5 @@ esac
 $LST | shuf -n $NUM | nl > $LASTS
 
 join $FIRSTS $LASTS | cut -d' ' -f2-
+
+popd > /dev/null
